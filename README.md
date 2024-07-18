@@ -58,16 +58,6 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
 ## License
 
 Nest is [MIT licensed](LICENSE).
@@ -80,10 +70,12 @@ Set-ExecutionPolicy RemoteSigned
 as an administrator
 nest new Octane
 cd .\octane\
-npm install @nestjs/typeorm typeorm pg passport @nestjs/passport passport-jwt passport-local @nestjs/config @nestjs/jwt bcrypt class-validator
+npm install @nestjs/typeorm typeorm pg passport @nestjs/passport passport-jwt passport-local @nestjs/config @nestjs/jwt bcrypt class-validator express-session
 
 # TODO eslint
 # TODO documenting
 # TODO swagger doc package
 # TODO .end.initial
 # TODO auto restart command line when change line
+# TODO login after registeration inside register function
+# TODO remove logs
