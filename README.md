@@ -72,7 +72,10 @@ nest new Octane
 cd .\octane\
 npm install @nestjs/typeorm typeorm pg passport @nestjs/passport passport-jwt passport-local @nestjs/config @nestjs/jwt bcrypt class-validator express-session
 
-# TODO eslint
+Install docker https://docs.docker.com/engine/install/
+docker build -t nestjs-app .
+docker-compose up
+
 # TODO documenting
 # TODO swagger doc package
 # TODO .end.initial
