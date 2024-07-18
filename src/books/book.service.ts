@@ -5,15 +5,15 @@ import { Book } from './book.entity';
 import { CreateBookDto } from './dto/create-book.dto';
 // import { UpdateBookDto } from './dto/update-book.dto'; // Import the UpdateBookDto
 // import { ReadingIntervalModule } from '../reading-intervals/reading-interval.module';
-import { ReadingInterval } from '../reading-intervals/reading-interval.entity';
+// import { ReadingInterval } from '../reading-intervals/reading-interval.entity';
 
 @Injectable()
 export class BookService {
   constructor(
     @InjectRepository(Book)
     private readonly bookRepository: Repository<Book>,
-    @InjectRepository(ReadingInterval)
-    private readingIntervalRepository: Repository<ReadingInterval>,
+    // @InjectRepository(ReadingInterval)
+    // private readingIntervalRepository: Repository<ReadingInterval>,
   ) {}
 
   async findAll(): Promise<Book[]> {

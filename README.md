@@ -22,69 +22,52 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+# Installation
 
 ```bash
-$ npm install
+$ npm install -g @nestjs/cli
+$ cd choosen directory
+# run in command line after opening it as administrator to be able to use nest
+$  Set-ExecutionPolicy RemoteSigned
+# create octane db 
+$ nest new Octane
+$ cd .\<directory>\
+$ npm install @nestjs/typeorm typeorm pg passport @nestjs/passport passport-jwt passport-local @nestjs/config @nestjs/jwt bcryptjs class-validator express-session
 ```
 
-## Running the app
+# Running the app
 
 ```bash
 # development
-$ npm run start
+# Even manually
+$ npm start
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# Or through docker
+Install docker https://docs.docker.com/engine/install/
+$ docker build -t nestjs-app .
+$ docker-compose up
 ```
 
-## Test
+# Test using jest e2e
 
 ```bash
 # unit tests
-$ npm run test
+$ npm test
+```
+## should receive after creating records
+```bash
+Test Suites: 5 passed, 5 total
+Tests:       7 passed, 7 total
+Snapshots:   0 total
+Time:        11.012 s
+```
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# Postman collection
+```bash
+# Attached a file containing postman collection for all endpoints "Octane Assignemnt.postman_collection.json", also an environment file to centralize values "Octane.postman_environment.json"
+# Environment should be choosen from top right inside postman header
 ```
 
 ## License
 
 Nest is [MIT licensed](LICENSE).
-
-
-
-npm install -g @nestjs/cli
-cd C:\My Filles\Kareem Zaher Assignment
-Set-ExecutionPolicy RemoteSigned
-as an administrator
-nest new Octane
-cd .\octane\
-npm install @nestjs/typeorm typeorm pg passport @nestjs/passport passport-jwt passport-local @nestjs/config @nestjs/jwt bcrypt class-validator express-session
-
-Install docker https://docs.docker.com/engine/install/
-docker build -t nestjs-app .
-docker-compose up
-
-# TODO documenting
-# TODO swagger doc package
-# TODO .end.initial
-# TODO auto restart command line when change line
-# TODO login after registeration inside register function
-# TODO remove logs
-# TODO reading validations
-# TODO isnotempty validation
-# TODO code commenting
-# TODO Logging and Exception Handling
-# TODO The API includes tests
-# TODO containerizing

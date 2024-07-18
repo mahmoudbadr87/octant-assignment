@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "77c0ca14-d9de-44a6-9777-3099bba3cc6e",
+		"name": "Octane Assignemnt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "725643"
+	},
+	"item": [
+		{
+			"name": "Register users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"{{UserName}}\",\r\n  \"password\": \"{{Password}}\",\r\n  \"role\": \"{{Role}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{Host}}/auth/register",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"{{UserName}}\",\n  \"password\": \"{{Password}}\"\n}"
+				},
+				"url": {
+					"raw": "{{Host}}/auth/login",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}"
+					}
+				],
+				"url": {
+					"raw": "{{Host}}/books",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"New Book 2\",\n  \"numOfPages\": 200\n}"
+				},
+				"url": {
+					"raw": "{{Host}}/books",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top books read",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{Host}}/books/top",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"books",
+						"top"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reading Intervals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bookId\": 11,\n  \"startPage\": 10,\n  \"endPage\": 50\n}"
+				},
+				"url": {
+					"raw": "{{Host}}/reading-intervals/",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"reading-intervals",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

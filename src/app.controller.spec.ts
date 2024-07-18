@@ -13,8 +13,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Welcome to Octane assignment!"', () => {
-      expect(appController.getHello()).toBe('Welcome to Octane assignment!');
+    it('should return "Welcome to Octane assignment"', () => {
+      expect(appController.getHello()).toBe('Welcome to Octane assignment');
     });
 
     it('should return "Healthy"', () => {

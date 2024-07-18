@@ -35,10 +35,6 @@ import { Book } from './books/book.entity';
   controllers: [AppController],
   providers: [
     AppService,
-    // {
-    //   provide: APP_GUARD,
-    //   useClass: RolesGuard
-    // }
   ],
 })
 export class AppModule {}
