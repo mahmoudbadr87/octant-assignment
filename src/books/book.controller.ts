@@ -18,6 +18,12 @@ export class BookController {
     return this.bookService.findAll();
   }
 
+  @Get('top')
+  @UseGuards(AuthGuard('jwt'))
+  async getTopBooks() {
+    return this.bookService.getTopBooks();
+  }
+
   @Post()
   @UseGuards(AuthGuard('jwt'), RolesGuard)
   @Roles('admin')

@@ -79,3 +79,9 @@ npm install @nestjs/typeorm typeorm pg passport @nestjs/passport passport-jwt pa
 # TODO auto restart command line when change line
 # TODO login after registeration inside register function
 # TODO remove logs
+# TODO reading validations
+# TODO isnotempty validation
+# TODO code commenting
+# TODO Logging and Exception Handling
+# TODO The API includes tests
+# TODO containerizing

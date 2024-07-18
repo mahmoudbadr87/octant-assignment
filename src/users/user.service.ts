@@ -37,9 +37,6 @@ export class UsersService {
 
     createUserDto.password = hashedPassword;
 
-    console.log('createUserDto.password :' + createUserDto.password)
-    // console.log('newSalt :' + newSalt)
-
     return this.create({
         // ...createUserDto,
         username: createUserDto.username,

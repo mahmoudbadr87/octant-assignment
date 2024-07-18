@@ -5,8 +5,10 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/user.module';
 import { BookModule } from './books/book.module';
+import { ReadingIntervalModule } from './reading-intervals/reading-interval.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/user.entity';
+import { ReadingInterval } from './reading-intervals/reading-interval.entity';
 import { Book } from './books/book.entity';
 
 @Module({
@@ -22,12 +24,13 @@ import { Book } from './books/book.entity';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [User, Book],
+      entities: [User, ReadingInterval, Book],
       synchronize: true, // Disable in production
     }),
     AuthModule,
     UsersModule,
     BookModule,
+    ReadingIntervalModule
   ],
   controllers: [AppController],
   providers: [

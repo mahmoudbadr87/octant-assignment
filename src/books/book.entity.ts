@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { ReadingInterval } from '../reading-intervals/reading-interval.entity';
 
 @Entity()
 export class Book {
@@ -10,4 +11,7 @@ export class Book {
 
   @Column()
   numOfPages: number;
+
+  @OneToMany(() => ReadingInterval, readingInterval => readingInterval.book)
+  readingIntervals: ReadingInterval[];
 }

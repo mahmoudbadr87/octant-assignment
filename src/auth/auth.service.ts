@@ -16,9 +16,7 @@ export class AuthService {
 
       if (thisUser) {
         const isPasswordMatched = await bcrypt.compare(password, thisUser.password);
-        console.log('isPasswordMatched: ' + isPasswordMatched)
         if(isPasswordMatched) {
-          console.log('validateUser : ', thisUser)
           // return thisUser
           const { password, ...result } = thisUser;
           return result;
@@ -30,12 +28,10 @@ export class AuthService {
   async login(loginUserDto: LoginUserDto): Promise<{ access_token: string }> {
     const { username, password } = loginUserDto;
     const getUser = await this.validateUser(username, password);
-    console.log('getUser : ', getUser)
     if (!getUser) {
       throw new UnauthorizedException('Invalid Credentials');
     }
 
-    console.log('Passed login')
 
     const payload = { username: getUser.username, sub: getUser.userId, role: getUser.role };
     return {
