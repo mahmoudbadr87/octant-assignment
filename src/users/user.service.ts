@@ -20,31 +20,33 @@ export class UsersService {
 
   async register(createUserDto: CreateUserDto) {
 
-    const { username, password, salt } = createUserDto;
+    const { username, password } = createUserDto;
     const existingUser = await this.findOneByUsername(username);
 
     if (existingUser) {
 
       throw new ConflictException('Username already exists');
-      
-    } else {
 
-      const hashedPassword = await bcrypt.hash(
-        createUserDto.password,
-        roundsOfHashing,
-      );
-  
-      createUserDto.password = hashedPassword;
-  
-      console.log('createUserDto.password :' + createUserDto.password)
-  
-      return this.create({
-          ...createUserDto,
-          password: hashedPassword,
-          role: 'admin',
-          salt: 'asjkasjkquqiwuqiwuqiwuqiw'
-      });
     }
+
+    // const newSalt = await bcrypt.genSalt(roundsOfHashing);
+    const hashedPassword = await bcrypt.hash(
+      createUserDto.password,
+      roundsOfHashing,
+    );
+
+    createUserDto.password = hashedPassword;
+
+    console.log('createUserDto.password :' + createUserDto.password)
+    // console.log('newSalt :' + newSalt)
+
+    return this.create({
+        // ...createUserDto,
+        username: createUserDto.username,
+        password: hashedPassword,
+        role: createUserDto.role,
+    });
+
   }
 
   async create(createUserDto: CreateUserDto): Promise<User> {

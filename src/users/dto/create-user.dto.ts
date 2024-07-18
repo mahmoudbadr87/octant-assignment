@@ -8,8 +8,5 @@ export class CreateUserDto {
     password: string;
 
     @IsString()
-    salt: string;
-
-    @IsString()
     role: string;
 }
